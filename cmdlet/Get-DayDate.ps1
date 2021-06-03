@@ -15,9 +15,9 @@ Function Get-DayDate {
     .EXAMPLE
         PS> Get-DayDate Second Tuesday 
     .EXAMPLE
-        PS> Get-DayDate -Occruance Last -DayOfWeek Friday -Month 12 -Year 2021
+        PS> Get-DayDate -Occurrence Last -DayOfWeek Friday -Month 12 -Year 2021
     .EXAMPLE
-        PS> (1..12) | %{ get-day -Occruance Thrid -DayOfWeek Thursday -Month $_ -Year 2022 }
+        PS> (1..12) | %{ get-day -Occurrence Thrid -DayOfWeek Thursday -Month $_ -Year 2022 }
     .Link
         https://github.com/JB405/PowerShell-Cmdlets
     .Notes 
@@ -26,7 +26,7 @@ Function Get-DayDate {
     [CmdletBinding()]
     param (
         [validateset('First','Second','Thrid','Fourth','Last')]
-        [Parameter(Position=0)][string]$Occruance ='Second',
+        [Parameter(Position=0)][string]$Occurrence ='Second',
         [validateset('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday')]
         [Parameter(Position=1)][String]$DayOfWeek = 'Tuesday',
         [ValidateRange(0,12)]
@@ -38,7 +38,7 @@ Function Get-DayDate {
         $Date = (Get-Date -Year $Year -Month $Month -Day 1)   
         # Find match DOW
         While($Date.DayOfWeek -ne $DayOfWeek) {$Date = $Date.AddDays(1)}
-        Switch ($Occruance) {
+        Switch ($Occurrence) {
             'First'  { $Date             }
             'Second' { $Date.AddDays(7)  }
             'Thrid'  { $Date.AddDays(14) }
