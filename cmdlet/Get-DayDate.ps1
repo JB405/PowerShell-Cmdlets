@@ -1,11 +1,11 @@
 Function Get-DayDate {      
 <#
     .SYNOPSIS
-        Returns the date for day occruance 
+        Returns the date for day occurrence 
     .DESCRIPTION
-        This cmdlet returns the date for a given dayof the week and orruance for a givin month and year
+        This cmdlet returns the date for a given dayof the week and occurrence for a givin month and year
     .PARAMETER Occruance
-        Specifies the occurance of the day of week (First,Second,Thrid,Fourth or last), the default is Second
+        Specifies the occurrence of the day of week (First,Second,Thrid,Fourth or last), the default is Second
     .PARAMETER DayOfWeek
         Specifies DayOfWeek ( Sunday, Monday, Tuesday, Wednesday, Thursday, Friday or Saturday )to find the date of default is Tuesday 
     .PARAMETER Month
