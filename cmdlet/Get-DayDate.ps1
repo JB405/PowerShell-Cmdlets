@@ -29,7 +29,7 @@ Function Get-DayDate {
         [Parameter(Position=0)][string]$Occurrence ='Second',
         [validateset('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday')]
         [Parameter(Position=1)][String]$DayOfWeek = 'Tuesday',
-        [ValidateRange(0,12)]
+        [ValidateRange(1,12)]
         [Int]$Month =(Get-Date).Month,
         [ValidateRange(0001,9999)]
         [Int]$Year =(Get-Date).Year
